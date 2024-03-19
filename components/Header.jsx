@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 
-function Header() {
+function Header(props) {
     const [text, setText] = useState('');
 
     const handleChange = (event) => {
         setText(event.target.value);
     };
 
-    function Button(props){
-        return (
-            <button onClick={props.onClick}>
-              Click on me!
-            </button>
-          );
+    const handleClick = () => {
+        props.updateData(text);
+        
     }
+
+    
 
     return (
         <div>
@@ -22,20 +21,11 @@ function Header() {
                 type="text"
                 value={text}
                 onChange={handleChange}
+                readOnly={false}
                 placeholder="Type something..."
             />
-            <Button/>
-            
-
-            <p>entraste: {text}</p>
-
+            <button onClick={handleClick}>Send Data</button>
         </div>
-
     );
-
-
-
-
 };
-
 export default Header;

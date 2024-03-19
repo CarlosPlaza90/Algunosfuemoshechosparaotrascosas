@@ -3,10 +3,12 @@ import { useState } from "react";
 
 
 function List(props) {
-   let a = 1
-   let b = 1
 
-    return (props.text);
+    return (
+        <>
+        <p>entraste: {props.data}</p>
+        </>
+    );
 
 };
 
