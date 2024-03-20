@@ -3,11 +3,22 @@ import { useState } from "react";
 
 
 function List(props) {
+    const [items, setItems] = useState([]);
+
+
+
 
     return (
-        <>
-        <p>entraste: {props.data}</p>
-        </>
+        <div>
+            <ul>
+                <li>{props.data}</li>
+            </ul>
+            
+        <div/>
+
+        </div>
+        
+        
     );
 
 };

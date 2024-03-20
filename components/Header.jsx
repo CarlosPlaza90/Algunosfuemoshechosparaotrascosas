@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function Header(props) {
+    let id = 0;
     const [text, setText] = useState('');
 
     const handleChange = (event) => {
@@ -10,7 +11,7 @@ function Header(props) {
     const handleClick = () => {
         props.updateData(text);
         
-    }
+    };
 
     
 
