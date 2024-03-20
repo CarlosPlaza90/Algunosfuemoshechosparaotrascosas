@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import List from '../components/List'
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState('a');
 
   const updateData = (newData) => {
     setData(newData);
