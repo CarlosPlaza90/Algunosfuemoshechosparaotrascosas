@@ -2,23 +2,29 @@ import React from "react";
 import { useState } from "react";
 
 
-function List(props) {
-    const [items, setItems] = useState([]);
-
-
+function List({ todos, setTodos }) {
 
 
     return (
         <div>
             <ul>
-                <li>{props.data}</li>
+            {todos.map((todo) => (
+                <li key={todo.id}>
+                    <p>{todo.title}</p>
+
+                </li>
+            ))}
+
             </ul>
             
-        <div/>
 
+
+
+
+            
         </div>
-        
-        
+
+
     );
 
 };

@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
 
-function Header(props) {
-    let id = 0;
-    const [text, setText] = useState('');
+function Header({id, setId, input, setInput, todos, setTodos}) {
+    
+    
 
     const handleChange = (event) => {
-        setText(event.target.value);
+        setInput(event.target.value);
     };
 
-    const handleClick = () => {
-        props.updateData(text);
+    
+
+    const onInfoSend = () =>{
+        setTodos([...todos, {id: id, title: input}]);
+        setInput("");
+        setId(id+1)
         
+        console.log(todos)
     };
-
     
 
     return (
         <div>
 
             <input
+                
                 type="text"
-                value={text}
+                value={input}
                 onChange={handleChange}
                 readOnly={false}
                 placeholder="Type something..."
             />
-            <button onClick={handleClick}>Send Data</button>
+            <button onClick={onInfoSend}>Send Data</button>
         </div>
     );
 };
