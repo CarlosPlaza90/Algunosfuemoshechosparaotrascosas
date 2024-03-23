@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Header({id, setId, input, setInput, todos, setTodos, status, setStatus}) {
+function Header({id, setId, input, setInput, todos, setTodos, completed, setcompleted}) {
     
     
 
@@ -11,7 +11,7 @@ function Header({id, setId, input, setInput, todos, setTodos, status, setStatus}
     
 
     const onInfoSend = () =>{
-        setTodos([...todos, {id: id, title: input, status: false}]);
+        setTodos([...todos, {id: id, title: input, completed: false}]);
         setInput("");
         setId(id+1)
         
@@ -27,7 +27,6 @@ function Header({id, setId, input, setInput, todos, setTodos, status, setStatus}
                 type="text"
                 value={input}
                 onChange={handleChange}
-                readOnly={false}
                 placeholder="Type something..."
             />
             <button onClick={onInfoSend}>Send Data</button>
