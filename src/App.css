@@ -44,3 +44,9 @@
 .strikethrough{
   text-decoration: line-through;
 }
+
+.Item{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  grid-gap: 10%;
+}

@@ -18,14 +18,29 @@ function List({ todos, setTodos }) {
 
   };
 
+  const handleDelete = (todos) => {
+
+    setTodos(
+
+      todos.map((item) => {
+        if (item.id === todos.id){
+          
+        }
+      })
+
+    )
+
+  }
+
   return (
     <div>
       <ul>
         {todos.map((todo) => (
-          <div>
+          <div className="Item">
             <li key={todo.id}>
               <p className={todo.completed ? "strikethrough" : ""} onChange={(event) => event.preventDefault()} onClick={() => handleCompleted(todo)}>{todo.title}</p>
             </li>
+            <button onClick={handleDelete}>Delete</button>
             
           </div>
 
