@@ -18,17 +18,9 @@ function List({ todos, setTodos }) {
 
   };
 
-  const handleDelete = (todos) => {
+  const handleDelete = ({ id }) => {
 
-    setTodos(
-
-      todos.map((item) => {
-        if (item.id === todos.id){
-          
-        }
-      })
-
-    )
+    setTodos(todos.filter((todo) => todo.id !== id))
 
   }
 
@@ -40,7 +32,7 @@ function List({ todos, setTodos }) {
             <li key={todo.id}>
               <p className={todo.completed ? "strikethrough" : ""} onChange={(event) => event.preventDefault()} onClick={() => handleCompleted(todo)}>{todo.title}</p>
             </li>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={() => handleDelete(todo)}>Delete</button>
             
           </div>
 

@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 
-function Header({id, setId, input, setInput, todos, setTodos, completed, setcompleted}) {
-    
-    
+function Header({ id, setId, input, setInput, todos, setTodos, completed, setcompleted }) {
+
+
 
     const handleChange = (event) => {
         setInput(event.target.value);
     };
 
-    
 
-    const onInfoSend = () =>{
-        setTodos([...todos, {id: id, title: input, completed: false}]);
+
+    const onInfoSend = () => {
+
+        input === "" ? alert("input cannot be blank fool!") : 
+        setTodos([...todos, { id: id, title: input, completed: false }]);
         setInput("");
-        setId(id+1)
-        
-        console.log(todos)
+        setId(id + 1)
+
+
+
+
+
     };
-    
+
 
     return (
         <div>
 
             <input
-                
+
                 type="text"
                 value={input}
                 onChange={handleChange}
